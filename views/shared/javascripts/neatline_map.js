@@ -662,9 +662,14 @@
             // Walk records.
             this._db().each(_.bind(function(record) {
 
-                // Get record dates.
-                var start = moment(record.data.start_visible_date);
-                var end = moment(record.data.end_visible_date);
+                // Parse visibility dates. If the date is a single negative year,
+                // parse it with moment(Number[]), which recognizes BC dates.
+                var start = record.data.start_visible_date.match(/^-\d+$/) ?
+                  moment([record.data.start_visible_date]) :
+                  moment(record.data.start_visible_date);
+                var end = record.data.end_visible_date.match(/^-\d+$/) ?
+                  moment([record.data.end_visible_date]) :
+                  moment(record.data.end_visible_date);
 
                 // If both are defined.
                 if (!_.isNull(start) && !_.isNull(end)) {
