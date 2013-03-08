@@ -288,9 +288,19 @@
             }
 
             // Set the starting date, if defined.
-            else if (Neatline.default_focus_date !== null) {
-                date = Date.parse(Neatline.record.default_focus_date);
+            else if (!_.isNull(Neatline.record.default_focus_date)) {
+
+                // If the date is stored as a string.
+                if (_.isNaN(parseInt(Neatline.record.default_focus_date, 10))) {
+                    date = Date.parse(Neatline.record.default_focus_date);
+                }
+
+                // If the date is stored as a timestamp.
+                else date = Neatline.record.default_focus_date;
+
+                // Manifest the date.
                 this.timeline.getBand(0).setCenterVisibleDate(date);
+
             }
 
             // Apply the ambiguity gradients.
@@ -439,7 +449,7 @@
          * - return string date             The center date.
          */
         getCenterForSave: function() {
-            return this.timeline.getBand(0).getCenterVisibleDate().toString();
+            return this.timeline.getBand(0).getCenterVisibleDate().getTime();
         },
 
         /*
