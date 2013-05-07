@@ -477,7 +477,9 @@
 
             // Use default focus if present.
             if (Neatline.record.default_focus_date) {
-                this.renderVisibility(Neatline.record.default_focus_date);
+                this.renderVisibility(
+                    parseInt(Neatline.record.default_focus_date), 10
+                );
             }
 
             // Otherwise, use the current time.
