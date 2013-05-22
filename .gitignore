@@ -1,14 +1,6 @@
-.DS_Store
 node_modules
 components
 .grunt
 pkg
 
 _SpecRunner.html
-
-views/admin/javascripts/payloads
-views/shared/javascripts/payloads
-
-views/admin/css/payloads
-views/shared/css/payloads
-views/shared/css/img
