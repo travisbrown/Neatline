@@ -56,7 +56,7 @@ class HelpersTest_GetItemMarkup extends Neatline_TestCase
         $this->assertRegExp('/item-slug\n/', nl_getItemMarkup($r));
 
         // No matching tags.
-        $record->tags = 'tag3';
+        $r->tags = 'tag3';
         $this->assertRegExp('/item-slug\n/', nl_getItemMarkup($r));
 
     }
