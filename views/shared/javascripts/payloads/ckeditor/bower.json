@@ -1,0 +1,8 @@
+{
+  "name": "ckeditor",
+  "version": "4.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor-dev.git"
+  }
+}
