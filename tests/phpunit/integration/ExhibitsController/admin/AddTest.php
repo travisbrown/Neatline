@@ -31,46 +31,46 @@ class ExhibitsControllerTest_AdminAdd extends Neatline_TestCase
         $this->dispatch('neatline/add');
 
         // Title:
-        $this->assertXpath('//input[@name="title"]');
+        @ $this->assertXpath('//input[@name="title"]');
 
         // Slug:
-        $this->assertXpath('//input[@name="slug"]');
+        @ $this->assertXpath('//input[@name="slug"]');
 
         // Base Layers:
         $root = '//select[@name="base_layers[]"]';
-        $this->assertXpath($root.'/optgroup[@label="Group1"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer1"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer2"]');
-        $this->assertXpath($root.'/optgroup[@label="Group2"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer3"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer4"]');
-        $this->assertXpath($root.'/optgroup[@label="Group3"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer5"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer6"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group1"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer1"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer2"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group2"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer3"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer4"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group3"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer5"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer6"]');
 
         // Default Base Layer:
         $root = '//select[@name="base_layer"]';
-        $this->assertXpath($root.'/optgroup[@label="Group1"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer1"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer2"]');
-        $this->assertXpath($root.'/optgroup[@label="Group2"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer3"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer4"]');
-        $this->assertXpath($root.'/optgroup[@label="Group3"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer5"]');
-        $this->assertXpath($root.'/optgroup/option[@value="Layer6"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group1"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer1"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer2"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group2"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer3"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer4"]');
+        @ $this->assertXpath($root.'/optgroup[@label="Group3"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer5"]');
+        @ $this->assertXpath($root.'/optgroup/option[@value="Layer6"]');
 
         // Widgets:
         $root = '//select[@name="widgets[]"]';
-        $this->assertXpath($root.'/option[@value="Widget1"]');
-        $this->assertXpath($root.'/option[@value="Widget2"]');
-        $this->assertXpath($root.'/option[@value="Widget3"]');
+        @ $this->assertXpath($root.'/option[@value="Widget1"]');
+        @ $this->assertXpath($root.'/option[@value="Widget2"]');
+        @ $this->assertXpath($root.'/option[@value="Widget3"]');
 
         // Narrative:
-        $this->assertXpath('//textarea[@name="narrative"]');
+        @ $this->assertXpath('//textarea[@name="narrative"]');
 
         // Public:
-        $this->assertXpath('//input[@name="public"]');
+        @ $this->assertXpath('//input[@name="public"]');
 
     }
 
